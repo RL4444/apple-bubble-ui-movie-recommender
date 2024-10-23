@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 700;
+    src: url(./fonts/Inter-Black.ttf) format("woff");
+}
+@font-face {
+    font-family: "Inter";
+    font-weight: 600;
+    src: url(./fonts/Inter-Bold.ttf) format("woff");
+}
+@font-face {
+    font-family: "Inter";
+    font-weight: 500;
+    src: url(./fonts/Inter-Regular.ttf) format("woff");
+}
+@font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    src: url(./fonts/Inter-Thin.ttf) format("woff");
+}
+
+body {
+    margin: 0;
+    font-weight: 500;
+    font-family: Inter, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 600;
+}
+
+button,
+p,
+a,
+span,
+div,
+input {
+    font-weight: 500;
+}
+
+.btn {
+    transition-duration: 0.2s;
+}
+
+.btn.hollow {
+    border: 1px solid #4f46e5;
+    color: #4f46e5 !important;
+    background-color: transparent;
+}
+.btn.hollow:hover {
+    color: white !important;
+}
+
+.btn:hover {
+    filter: contrast(120%);
+    background-color: #760979;
+}
+
+.btn.with-animation:hover {
+    transform: translateY(-2px);
+    scale: 1.1;
+}
+
+.btn.unstyled {
+    color: rgb(46, 46, 253);
+}
+.btn.unstyled:hover {
+    transform: translateY(0);
+    scale: 1;
+    background-color: #d6d6d6;
+}
+
+.lin-grad-bg {
+    background: #524af5;
+    background: linear-gradient(180deg, #534af5f3 0%, #750979d0 40%, #ffffff31 100%);
+}
+
+.bg-white-blend {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, #ffffff31 0%, #ffffffac 15%, #ffffff 40%);
+}
+
+.bg-blend {
+    background-image: url("../blend-bg.jpg");
+    background-position: bottom;
+}
+
+button:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed;
+}
