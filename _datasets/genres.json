@@ -1,0 +1,176 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "value": 100,
+            "name": "Action",
+            "type": "genre",
+            "tmdbId": 28,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 2,
+            "value": 200,
+            "name": "Adventure",
+            "type": "genre",
+            "tmdbId": 12,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 3,
+            "value": 300,
+            "name": "Animation",
+            "type": "genre",
+            "tmdbId": 16,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 4,
+            "value": 400,
+            "name": "Comedy",
+            "type": "genre",
+            "tmdbId": 35,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 5,
+            "value": 500,
+            "name": "Crime",
+            "type": "genre",
+            "tmdbId": 80,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 6,
+            "value": 600,
+            "name": "Documentary",
+            "type": "genre",
+            "tmdbId": 99,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 7,
+            "value": 700,
+            "name": "Drama",
+            "type": "genre",
+            "tmdbId": 18,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 8,
+            "value": 800,
+            "name": "Family",
+            "type": "genre",
+            "tmdbId": 10751,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 9,
+            "value": 900,
+            "name": "Fantasy",
+            "type": "genre",
+            "tmdbId": 14,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 10,
+            "value": 1000,
+            "name": "History",
+            "type": "genre",
+            "tmdbId": 36,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 11,
+            "value": 1100,
+            "name": "Horror",
+            "type": "genre",
+            "tmdbId": 27,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 12,
+            "value": 1200,
+            "name": "Music",
+            "type": "genre",
+            "tmdbId": 10402,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 13,
+            "value": 1300,
+            "name": "Mystery",
+            "type": "genre",
+            "tmdbId": 9648,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 14,
+            "value": 1400,
+            "name": "Romance",
+            "type": "genre",
+            "tmdbId": 10749,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 15,
+            "value": 1500,
+            "name": "Science Fiction",
+            "type": "genre",
+            "tmdbId": 878,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 16,
+            "value": 1600,
+            "name": "TV Movie",
+            "type": "genre",
+            "tmdbId": 10770,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 17,
+            "value": 1700,
+            "name": "Thriller",
+            "type": "genre",
+            "tmdbId": 53,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 18,
+            "value": 1800,
+            "name": "War",
+            "type": "genre",
+            "tmdbId": 10752,
+            "relevance": 500,
+            "selected": false
+        },
+        {
+            "id": 19,
+            "value": 1900,
+            "name": "Western",
+            "type": "genre",
+            "tmdbId": 37,
+            "relevance": 500,
+            "selected": false
+        }
+    ],
+    "count": 19
+}
