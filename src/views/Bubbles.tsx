@@ -32,9 +32,10 @@ type TProps = {
     onFinish: (answers: Array<number>) => void;
     isFinished: boolean;
     items: Array<IBubbleData>;
+    selectAmount?: number;
 };
 
-const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFinish, selected, isFinished }: TProps) => {
+const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFinish, selected, isFinished, selectAmount = 5 }: TProps) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const networkRef = useRef<Network | null>(null);
     const [selectedNodes, setSelectedNodes] = useState<number[]>([]); // Array of selected node IDs
@@ -59,7 +60,7 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
                 // Adding a new node
                 nodes.update({
                     ...node,
-                    color: "purple",
+                    color: "tomato",
                     value: isSelected ? 500 : 400,
                     // @ts-ignore
                     y: (node!.y || 0) + 0.00001,
@@ -70,7 +71,7 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
                 // Removing a node
                 nodes.update({
                     ...node,
-                    color: "blue",
+                    color: "#2a7bde",
                     value: isSelected ? 500 : 400,
                     physics: true,
                 });
@@ -109,7 +110,7 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
                 return {
                     id: item.id,
                     label: item.name.split(" ").join("\n"), // Use custom HTML content for the label
-                    color: "blue", // Default color,
+                    color: "#2a7bde", // Default color,
                     value: isSelected ? 500 : 400,
                     x: index % 2 === 0 ? -containerWidth / 2 : containerWidth / 2, // Position nodes
                     y: Math.random() * containerHeight - containerHeight / 2, // Random Y position
@@ -135,7 +136,7 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
                     max: 400,
                 },
                 font: {
-                    size: 200, // Font size for labels
+                    size: 150, // Font size for labels
                     color: "#fff", // White label color
                     vadjust: 0,
                     align: "center",
@@ -224,23 +225,23 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
                         bgColor="unstyled"
                         withAnimation
                         size="xl"
-                        title={previousStage !== "/" ? `Choose ${previousStage.replace("/", "")}` : "/"}
+                        title={previousStage !== "" ? `Choose ${previousStage.replace("/", "")}` : "back"}
                         to={nextStage}
                         IconLeft={BsArrowLeft}
                     />
                     {isEnoughSelected ? (
                         <div>
-                            <BsCheck2Circle size={"3rem"} color="green" />
+                            <BsCheck2Circle size={"40px"} color="green" />
                             Great!
                         </div>
                     ) : (
                         <h2 className="font-light text-3xl">
-                            Select {5 - selectedNodes.length} or more {window.location.pathname.replace("/", "")}
+                            Select {selectAmount - selectedNodes.length} or more {window.location.pathname.replace("/", "")}
                         </h2>
                     )}
                     <Button
-                        disabled={selectedNodes.length < 5}
-                        bgColor={selectedNodes.length < 5 ? "unstyled" : "bg-green-600"}
+                        disabled={selectedNodes.length < selectAmount}
+                        bgColor={selectedNodes.length < selectAmount ? "unstyled" : "bg-green-600"}
                         withAnimation
                         size="xl"
                         title={nextStage ? `Choose ${nextStage.replace("/", "")}` : isFinished ? "Get Recommendations" : "Next"}
