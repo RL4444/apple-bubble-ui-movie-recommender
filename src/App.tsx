@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-
 import { Switch, Route } from "react-router-dom";
+
+import { fetchInitialData } from "./api/api";
 
 // screens
 import StartScreen from "./views/StartScreen";
 import BubbleChart from "./views/Bubbles";
-import { bubbleDummyData } from "./utils";
 
 type TIdList = Array<number>;
 
@@ -21,12 +21,48 @@ function App() {
         actors: [],
         directors: [],
     });
+    const [questions, setQuestions] = useState({
+        genres: [],
+        actors: [],
+        directors: [],
+    });
+    const [loaded, setLoaded] = useState<boolean>(false);
 
-    const isFinished = answers.genres.length > 5 && answers.actors.length > 5 && answers.directors.length > 5;
+    const isFinished = answers.genres.length >= 5 && answers.actors.length >= 5 && answers.directors.length >= 3;
 
     useEffect(() => {
-        console.log({ answers });
+        const stateToStore = JSON.stringify({ ...answers });
+        console.log({ stateToStore });
+        localStorage.setItem("imx__answers", stateToStore);
     }, [answers]);
+
+    useEffect(() => {
+        const prevSessionState = localStorage.getItem("imx__answers");
+        if (prevSessionState) {
+            console.log("previous session ", JSON.parse(prevSessionState));
+            setAnswers(JSON.parse(prevSessionState));
+        }
+    }, []);
+
+    useEffect(() => {
+        async function fetchData() {
+            const { data, error } = await fetchInitialData();
+            if (error) {
+                window.alert("error fetching data, check logs and connection ");
+                return;
+            }
+            setQuestions({
+                genres: data.genres,
+                actors: data.actors,
+                directors: data.directors,
+            });
+            setLoaded(true);
+        }
+
+        if (!loaded) {
+            fetchData();
+        }
+    }, [questions, loaded]);
 
     return (
         <div className="App">
@@ -37,10 +73,11 @@ function App() {
                     component={() => (
                         <BubbleChart
                             selected={answers.genres}
-                            items={bubbleDummyData}
+                            items={questions.genres}
                             previousStage={""}
                             nextStage="/actors"
                             isFinished={isFinished}
+                            selectAmount={5}
                             onFinish={(genreAnswers: Array<number>) =>
                                 setAnswers({
                                     ...answers,
@@ -56,10 +93,11 @@ function App() {
                     component={() => (
                         <BubbleChart
                             selected={answers.actors}
-                            items={bubbleDummyData}
+                            items={questions.actors}
                             previousStage={"/genres"}
                             nextStage="/directors"
                             isFinished={isFinished}
+                            selectAmount={5}
                             onFinish={(actorAnswers: Array<number>) =>
                                 setAnswers({
                                     ...answers,
@@ -75,10 +113,11 @@ function App() {
                     component={() => (
                         <BubbleChart
                             selected={answers.directors}
-                            items={bubbleDummyData}
+                            items={questions.directors}
                             previousStage={"/actors"}
                             nextStage=""
                             isFinished={isFinished}
+                            selectAmount={3}
                             onFinish={(directorsAnswers: Array<number>) =>
                                 setAnswers({
                                     ...answers,

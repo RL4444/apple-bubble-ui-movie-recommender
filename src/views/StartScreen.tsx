@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
+
 import Button from "../components/Button";
+
 import { GiFilmSpool } from "react-icons/gi";
 import { FaQuestionCircle } from "react-icons/fa";
 import { MdOutlinePrivacyTip } from "react-icons/md";
@@ -10,13 +13,28 @@ type TProps = {
 };
 
 const StartScreen = ({ title }: TProps) => {
+    const [previousResults, setPreviousResults] = useState<any>({ valid: false });
+
+    useEffect(() => {
+        const prevSessionState = localStorage.getItem("imx__recommendations");
+        if (prevSessionState) {
+            console.log("previous session ", JSON.parse(prevSessionState));
+        }
+        setPreviousResults({ ...JSON.parse(prevSessionState!), valid: true });
+    }, []);
+
     return (
         <>
             <div className="relative h-[100dvh] w-full flex flex-col items-center bg-blend">
                 <div className="w-full h-[50dvh] mx-auto flex flex-col items-center lin-grad-bg">
                     <h1 className="text-7xl md:text-9xl text-white mt-auto">iMX</h1>
                     <h2 className="text-3xl md:text-5xl font-thin text-white mb-auto text-center">Let AI Choose your next film</h2>
-                    <Button to={"/genres"} withAnimation size="xl" title={"Let's go"} IconRight={GiFilmSpool} />
+                    <div className="flex justify-center w-full gap-6">
+                        <Button to={"/genres"} withAnimation size="xl" title={"Let's go"} IconRight={GiFilmSpool} />
+                        {previousResults.valid && (
+                            <Button to={"/recommendations"} withAnimation size="xl" title={"Let's go"} IconRight={GiFilmSpool} />
+                        )}
+                    </div>
                     <br />
                     <br />
                 </div>
