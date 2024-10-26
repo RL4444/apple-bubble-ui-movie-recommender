@@ -10,8 +10,9 @@ const isDev = process.env.NODE_ENV ? false : true;
 const port = process.env.PORT || 2010;
 
 app.use(cors());
+app.use(express.json());
 
-app.get("/test", (req, res) => {
+app.get("/health-check", (req, res) => {
     res.json({ message: `hi from the ${isDev ? "dev" : "prod"} server at time ${new Date().getTime()}` });
 });
 

@@ -9,8 +9,8 @@ const fetchRecommendations = async (recommendationsDataRaw, currentPage = 1) => 
     console.log({ recommendationsDataRaw });
 
     const directorsQueryParams = `&with_crew=${recommendationsDataRaw.directors.join("|")}`;
-    const actorsQueryParams = `&with_pepople=${recommendationsDataRaw.actors.join("|")}`;
-    const genresQueryParams = `&with_genre${recommendationsDataRaw.genres.join("|")}`;
+    const actorsQueryParams = `&with_people=${recommendationsDataRaw.actors.join("|")}`;
+    const genresQueryParams = `&with_genres=${recommendationsDataRaw.genres.join("|")}`;
 
     const url =
         "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc" +
@@ -28,11 +28,12 @@ const fetchRecommendations = async (recommendationsDataRaw, currentPage = 1) => 
             },
         });
 
-        console.log({ response });
-        fs.writeFileSync("./response.json", JSON.stringify({ data: response }));
-        return response;
+        const { data } = response;
+        fs.writeFileSync("./recommendations/response.json", JSON.stringify({ data: data.results }));
+        return { data: data.results, error: false, status: 200, message: null };
     } catch (error) {
         console.log("recommendations/index.js fetchRecommendations catch block -- ", { error });
+        return { data: null, error: true, status: 500, message: error };
     }
 };
 

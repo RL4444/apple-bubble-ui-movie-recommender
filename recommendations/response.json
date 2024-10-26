@@ -1,0 +1,221 @@
+{
+    "data": [
+        {
+            "adult": false,
+            "backdrop_path": "/xi1VSt3DtkevUmzCx2mNlCoDe74.jpg",
+            "genre_ids": [
+                35,
+                14,
+                27
+            ],
+            "id": 917496,
+            "original_language": "en",
+            "original_title": "Beetlejuice Beetlejuice",
+            "overview": "After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Betelgeuse, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.",
+            "popularity": 1031.464,
+            "poster_path": "/kKgQzkUCnQmeTPkyIwHly2t6ZFI.jpg",
+            "release_date": "2024-09-04",
+            "title": "Beetlejuice Beetlejuice",
+            "video": false,
+            "vote_average": 7.21,
+            "vote_count": 1518
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/yRKyJJYIzfeiVDHBe4LXguPQCvD.jpg",
+            "genre_ids": [
+                14,
+                35
+            ],
+            "id": 4011,
+            "original_language": "en",
+            "original_title": "Beetlejuice",
+            "overview": "A newly dead New England couple seeks help from a deranged demon exorcist to scare an affluent New York family out of their home.",
+            "popularity": 255.344,
+            "poster_path": "/nnl6OWkyPpuMm595hmAxNW3rZFn.jpg",
+            "release_date": "1988-03-30",
+            "title": "Beetlejuice",
+            "video": false,
+            "vote_average": 7.382,
+            "vote_count": 7385
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3PQLohxgvjUQgF94sY5SEgVKSS6.jpg",
+            "genre_ids": [
+                28,
+                53,
+                80
+            ],
+            "id": 1089,
+            "original_language": "en",
+            "original_title": "Point Break",
+            "overview": "In Los Angeles, a gang of bank robbers who call themselves The Ex-Presidents commit their crimes while wearing masks of Reagan, Carter, Nixon and Johnson. Believing that the members of the gang could be surfers, the F.B.I. sends young agent Johnny Utah to the beach undercover to mix with the surfers and gather information.",
+            "popularity": 47.097,
+            "poster_path": "/tlbERIghrQ4oofqlbF7H0K0EYnx.jpg",
+            "release_date": "1991-07-12",
+            "title": "Point Break",
+            "video": false,
+            "vote_average": 7.2,
+            "vote_count": 3513
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/o6f1sJ0ZYg6TA2tMgoHdupB68QB.jpg",
+            "genre_ids": [
+                28,
+                10752,
+                36
+            ],
+            "id": 855,
+            "original_language": "en",
+            "original_title": "Black Hawk Down",
+            "overview": "When U.S. Rangers and an elite Delta Force team attempt to kidnap two underlings of a Somali warlord, their Black Hawk helicopters are shot down, and the Americans suffer heavy casualties, facing intense fighting from the militia on the ground.",
+            "popularity": 61.343,
+            "poster_path": "/7fU5dSqKRL4XHeEUz62rCKBfYok.jpg",
+            "release_date": "2001-12-28",
+            "title": "Black Hawk Down",
+            "video": false,
+            "vote_average": 7.4,
+            "vote_count": 5671
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2va32apQP97gvUxaMnL5wYt4CRB.jpg",
+            "genre_ids": [
+                14,
+                28,
+                80
+            ],
+            "id": 268,
+            "original_language": "en",
+            "original_title": "Batman",
+            "overview": "Batman must face his most ruthless nemesis when a deformed madman calling himself \"The Joker\" seizes control of Gotham's criminal underworld.",
+            "popularity": 50.843,
+            "poster_path": "/cij4dd21v2Rk2YtUQbV5kW69WB2.jpg",
+            "release_date": "1989-06-21",
+            "title": "Batman",
+            "video": false,
+            "vote_average": 7.233,
+            "vote_count": 7770
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5tFt6iuGnKapHl5tw0X0cKcnuVo.jpg",
+            "genre_ids": [
+                10751,
+                14,
+                12
+            ],
+            "id": 329996,
+            "original_language": "en",
+            "original_title": "Dumbo",
+            "overview": "A young elephant, whose oversized ears enable him to fly, helps save a struggling circus, but when the circus plans a new venture, Dumbo and his friends discover dark secrets beneath its shiny veneer.",
+            "popularity": 40.589,
+            "poster_path": "/kTF2omZq1izOeplnnSACxhs4NLF.jpg",
+            "release_date": "2019-03-27",
+            "title": "Dumbo",
+            "video": false,
+            "vote_average": 6.6,
+            "vote_count": 4288
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3WP0RObZ2t7ShHfqQpKPljF9B22.jpg",
+            "genre_ids": [
+                28,
+                14
+            ],
+            "id": 364,
+            "original_language": "en",
+            "original_title": "Batman Returns",
+            "overview": "Batman must face The Penguin, a sewer-dwelling gangleader intent on being accepted into Gotham society.  Meanwhile, another Gotham resident finds herself transformed into Catwoman and is out for revenge...",
+            "popularity": 43.007,
+            "poster_path": "/jKBjeXM7iBBV9UkUcOXx3m7FSHY.jpg",
+            "release_date": "1992-06-19",
+            "title": "Batman Returns",
+            "video": false,
+            "vote_average": 6.928,
+            "vote_count": 6441
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/sjsaxwNsgBbrWrJIXtCT5DNo9Mt.jpg",
+            "genre_ids": [
+                80,
+                53
+            ],
+            "id": 181283,
+            "original_language": "en",
+            "original_title": "Child 44",
+            "overview": "Set in Stalin-era Soviet Union, a disgraced MGB agent is dispatched to investigate a series of child murders -- a case that begins to connect with the very top of party leadership.",
+            "popularity": 33.09,
+            "poster_path": "/5OCQvDKHbQbhs6bby3Aa6Tmsg92.jpg",
+            "release_date": "2015-03-15",
+            "title": "Child 44",
+            "video": false,
+            "vote_average": 6.274,
+            "vote_count": 1633
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/mXELcGjyU0osFfUCiz1YdAn470M.jpg",
+            "genre_ids": [
+                80,
+                18,
+                53
+            ],
+            "id": 184,
+            "original_language": "en",
+            "original_title": "Jackie Brown",
+            "overview": "Jackie Brown is a flight attendant who gets caught in the middle of smuggling cash into the country for her gunrunner boss. When the cops try to use Jackie to get to her boss, she hatches a plan — with help from a bail bondsman — to keep the money for herself.",
+            "popularity": 27.92,
+            "poster_path": "/ewbLUXvm4riZL0aepy90o0vMesn.jpg",
+            "release_date": "1997-12-25",
+            "title": "Jackie Brown",
+            "video": false,
+            "vote_average": 7.357,
+            "vote_count": 6259
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ubLsCmv36zUUt2zxhFSowYFe5uF.jpg",
+            "genre_ids": [
+                18,
+                14
+            ],
+            "id": 656968,
+            "original_language": "en",
+            "original_title": "FX's A Christmas Carol",
+            "overview": "London, 1843. Ebenezer Scrooge, a bitter old man, despises the Christmas holiday. Over the course of Christmas Eve night he is visited by three ghosts to show him his past, present and future.",
+            "popularity": 13.696,
+            "poster_path": "/tKW48tnZKaHLBIxxgoAf9BIpyRv.jpg",
+            "release_date": "2019-12-19",
+            "title": "FX's A Christmas Carol",
+            "video": false,
+            "vote_average": 7.095,
+            "vote_count": 169
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                28,
+                12,
+                10752,
+                18
+            ],
+            "id": 447436,
+            "original_language": "en",
+            "original_title": "War Party",
+            "overview": "Navy SEAL drama, which is expected to be based on a true story. Further plot details are being kept under wraps.",
+            "popularity": 2.45,
+            "poster_path": null,
+            "release_date": "",
+            "title": "War Party",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        }
+    ]
+}
