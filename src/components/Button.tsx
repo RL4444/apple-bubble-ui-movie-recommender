@@ -13,6 +13,7 @@ type TProps = {
     withAnimation?: boolean;
     size?: TSizes; // sm md xl 2xl etc
     to?: string | null;
+    externalLink?: string | null;
 };
 
 const ButtonElem = ({ withAnimation, bgColor, size, onClick, disabled, IconLeft, title, IconRight }: TProps) => (
@@ -49,7 +50,24 @@ const Button = ({
     IconLeft,
     size = "md",
     to = null,
+    externalLink = null,
 }: TProps) => {
+    if (externalLink) {
+        return (
+            <a target="_blank" rel="noreferrer noopener" href={externalLink}>
+                <ButtonElem
+                    withAnimation={withAnimation}
+                    title={title}
+                    bgColor={bgColor}
+                    onClick={onClick}
+                    disabled={disabled}
+                    IconRight={IconRight}
+                    IconLeft={IconLeft}
+                    size={size}
+                />
+            </a>
+        );
+    }
     if (to) {
         return (
             <Link to={to}>

@@ -8,36 +8,32 @@ import Button from "../components/Button";
 import { BsArrowLeft, BsArrowRight, BsCheck2Circle } from "react-icons/bs";
 import "vis-network/styles/vis-network.css";
 
-interface IBubbleData {
-    id: number;
-    name: string;
-    relevence: number;
-    value: string | number;
-}
-
-interface IVisNode {
-    id: number;
-    label?: string;
-    value?: number;
-    color?: string;
-    x?: number;
-    y?: number;
-    physics?: boolean;
-}
+import { IVisNode, IBubbleData } from "../types";
 
 type TProps = {
-    nextStage: string;
+    nextStage?: string;
     previousStage: string;
     selected: Array<number>;
     onFinish: (answers: Array<number>) => void;
     isFinished: boolean;
     items: Array<IBubbleData>;
     selectAmount?: number;
+    finalStage?: boolean;
 };
 
-const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFinish, selected, isFinished, selectAmount = 5 }: TProps) => {
+const BubbleChart: React.FC<TProps> = ({
+    finalStage = false,
+    nextStage,
+    previousStage,
+    items,
+    onFinish,
+    selected,
+    isFinished,
+    selectAmount = 5,
+}: TProps) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const networkRef = useRef<Network | null>(null);
+
     const [selectedNodes, setSelectedNodes] = useState<number[]>([]); // Array of selected node IDs
     const [nodes, setNodes] = useState<DataSet<IVisNode>>({} as DataSet<IVisNode>); // Store nodes to update them later
     const [loaded, setLoaded] = useState<boolean>(false);
@@ -71,7 +67,7 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
                 // Removing a node
                 nodes.update({
                     ...node,
-                    color: "#2a7bde",
+                    color: "grey",
                     value: isSelected ? 500 : 400,
                     physics: true,
                 });
@@ -110,7 +106,7 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
                 return {
                     id: item.id,
                     label: item.name.split(" ").join("\n"), // Use custom HTML content for the label
-                    color: "#2a7bde", // Default color,
+                    color: "grey", // Default color,
                     value: isSelected ? 500 : 400,
                     x: index % 2 === 0 ? -containerWidth / 2 : containerWidth / 2, // Position nodes
                     y: Math.random() * containerHeight - containerHeight / 2, // Random Y position
@@ -202,15 +198,17 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
     }, [handleClick, loaded]);
 
     useEffect(() => {
+        // check for selectedNodes update & use current
+        // a ref has way less side effects than a reactive state - that's why
         selectedNodesRef.current = [...selectedNodes];
     }, [selectedNodes]);
 
     const handleNextStage = () => {
         onFinish(selectedNodesRef.current);
-
-        if (isFinished) {
-            history.push("/recommendations");
-        } else history.push(nextStage);
+        if (!finalStage) {
+            history.push(nextStage!);
+        } else {
+        }
     };
 
     const isEnoughSelected = selectedNodes.length >= 5;
@@ -226,7 +224,7 @@ const BubbleChart: React.FC<TProps> = ({ nextStage, previousStage, items, onFini
                         withAnimation
                         size="xl"
                         title={previousStage !== "" ? `Choose ${previousStage.replace("/", "")}` : "back"}
-                        to={nextStage}
+                        to={previousStage}
                         IconLeft={BsArrowLeft}
                     />
                     {isEnoughSelected ? (

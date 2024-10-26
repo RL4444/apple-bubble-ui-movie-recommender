@@ -20,7 +20,7 @@ const StartScreen = ({ title }: TProps) => {
         if (prevSessionState) {
             console.log("previous session ", JSON.parse(prevSessionState));
         }
-        setPreviousResults({ ...JSON.parse(prevSessionState!), valid: true });
+        setPreviousResults({ ...JSON.parse(prevSessionState!), valid: false });
     }, []);
 
     return (
