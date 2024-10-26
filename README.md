@@ -1,14 +1,32 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image info](./bubbles.png)
+
+
+# Apple Music Inspired Bubble Picker
+
+An Interactive UI that generates recommended movies based on the UI input using React, Typescript, VisJS and TMDB's API.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm dev`
+
+Runs the fullstack app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The frontend will reload if you make edits.\
+The backend will not however reload if you make edits.\
+
+
+### `npm server-dev`
+
+will run the dev server independently on port 2010 
+This server will run useing nodemon, so it will also reload when you save any server side changes
+
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the frontend of app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
