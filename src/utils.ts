@@ -24,3 +24,8 @@ export const bubbleDummyData = [
     { id: 23, value: "23", name: "Foreign Language", relevence: 500, selected: false },
     { id: 24, value: "24", name: "Teen", relevence: 300, selected: false },
 ]
+
+export function toPrettyDate(rawDateStr: string) {
+    const date = new Date(rawDateStr);
+    return date.getFullYear(); // Should really use user-based locale here
+}

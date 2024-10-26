@@ -11,14 +11,14 @@ export const fetchInitialData = async () => {
 }
 
 export const postRecommendations = async (recommendations: any) => {
-    const endpoint = 'fetch-initial-data/'
+    const endpoint = 'recommendations/'
     const url = `${BASE_URL}${endpoint}`
     const res = await fetch(url, {
         method: 'POST',
-        body: JSON.stringify({ recommendations })
+        body: JSON.stringify({ recommendations }),
+        headers: { 'Content-Type': 'application/json' },
     });
 
     const result = await res.json();
-
     return result
 }
